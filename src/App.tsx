@@ -129,7 +129,7 @@ function sortPRsBy(
   key: keyof PullRequest,
   direction?: "desc" | "asc"
 ): PullRequest[] {
-  const dir = direction === "desc" ? -1 : 1;
+  const dir = direction === "desc" ? 1 : -1;
   return array.sort((a, b) => {
     if (a[key] < b[key]) return dir;
     if (a[key] > b[key]) return dir;
@@ -467,7 +467,7 @@ function DependencyTable({
 }) {
   if (Object.keys(plugins).length === 0) return null;
   return (
-    <div>
+    <>
       <h3>{title}</h3>
       <Table className="table">
         <thead>
@@ -499,7 +499,7 @@ function DependencyTable({
           ))}
         </tbody>
       </Table>
-    </div>
+    </>
   );
 }
 
@@ -666,6 +666,7 @@ function PullRequestModal({
           <Modal.Title>Pull Requests</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <p>PRs for {pkg} merged between {humanReadableLocaleDate(base.time[base.version])} and {humanReadableLocaleDate(compare.time[compare.version])}</p>
           <Form>
             <Form.Group className="mb-3" controlId="author-select">
               <Form.Label>Filter PRs</Form.Label>
@@ -702,7 +703,7 @@ function PullRequestModal({
                       <a href={pr.url}>{pr.title}</a>
                     </td>
                     <td>{pr.author}</td>
-                    <td>{humanReadableUTCDate(pr.mergedAt)}</td>
+                    <td>{humanReadableLocaleDate(pr.mergedAt)}</td>
                   </tr>
                 ))}
             </tbody>

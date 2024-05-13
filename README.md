@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# sf-version-compare
+
+Compare two different versions of the [Salesforce CLI](https://github.com/salesforcecli/cli)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `REACT_APP_GH_TOKEN=$GH_TOKEN npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,7 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-The app depends on the `GH_TOKEN` being available. So run with `REACT_APP_GH_TOKEN=$GH_TOKEN npm start`
+The app depends on the `GH_TOKEN` being available so you must run with `REACT_APP_GH_TOKEN=$GH_TOKEN npm start`
 
 ### `npm test`
 
